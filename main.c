@@ -1,19 +1,18 @@
 #include <studio.h>
 
 int main(){
-    int num;
-    int abs_val;
+    int count = 0;
+    int c;
 
-    printf("정수 하나를 입력하시오 : ");
-    scanf("%d", &num);
+    printf("input a string: ");
 
-    if (num < 0) {
-        abs_val = -num;
-    } else {
-        abs_val = num;
+    while ((c = getchar()) != '\n') {
+        if (c >= '0' && c <= "9") {
+            count++;
+        }
     }
 
-    printf("절댓값은 %d입니다.\n", abs_val);
+    printf("the number of digits is %d\n", count);
 
     return 0;
 }
