@@ -1,41 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int num1, num2;
-    char op;
+    int answer = 59; 
+    int guess;       
+    int trials = 0;  
 
-    printf("enter the calculation : ");
+    do {
+        printf("Guess a number :");
+        scanf("%d", &guess);
+        trials++; 
 
-    scanf("%d %c %d", &num1, &op, &num2);
+        if (guess > answer) {
+            printf("high!\n");
+        } else if (guess < answer) {
+            printf("low!\n");
+        }
+    } while (guess != answer);
 
-    switch (op) {
-        case '+':
-            printf("=%d\n", num1 + num2);
-            break;
-        case '-':
-            printf("=%d\n", num1 - num2);
-            break;
-        case '*':
-            printf("=%d\n", num1 * num2);
-            break;
-        case '/':
-            if (num2 != 0) {
-                printf("=%d\n", num1 / num2);
-            } else {
-                printf("0으로 나눌 수 없습니다.\n");
-            }
-            break;
-        case '%':
-            if (num2 != 0) {
-                printf("=%d\n", num1 % num2);
-            } else {
-                printf("0으로 나눌 수 없습니다.\n");
-            }
-            break;
-        default:
-            printf("잘못된 연산자입니다.\n");
-            break;
-    }
+    printf("Congratulation! trials:%d\n", trials);
 
     return 0;
 }
